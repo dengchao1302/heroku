@@ -4,7 +4,7 @@
                     <%  Films.forEach(function(film) {%>
                         <div class="owl-item">
                             <div class="item">
-                                <a href="single/<%- film.id%>"><img src="<%- film.file%>" alt="<%- film.file%>" /></a>
+                                <a href="single/<%- film.id%>"><img src="<%- film.posterURL%>" alt="<%- film.file%>" /></a>
                                 <div class="owl-caption">
                                     <a href="single/<%- film.id%>" class="title"><%- film.Name%></a>
                                     <p class="min">Thời Lượng : <%- film.time%> Phút</p>
