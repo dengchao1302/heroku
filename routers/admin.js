@@ -69,7 +69,7 @@ router.post('/film/delete/:id',async (req,res) => {
       }
     });
   }
-  res.redirect('/cineplex');
+  res.redirect('/admin/film');
 });
 
 
