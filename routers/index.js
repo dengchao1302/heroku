@@ -104,7 +104,7 @@ router.post('/register', async function(req, res) {
       where: { email },
     });
     if (user) {
-      d throw Error('Existed email');
+      throw Error('Existed email');
       res.redirect('/register');
     }
     else{
