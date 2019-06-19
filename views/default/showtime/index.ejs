@@ -1,0 +1,53 @@
+<%- include('../../partials/default/header.ejs')%>
+
+<body>
+    <%- include('../../partials/default/navigation.ejs')%>
+    <div class="banner-header">
+        <div class="container-fluid">
+            <div class="img-banner">
+                <img src="image/banner.jpg" alt="" style="width: 100%; background-size:cover;">
+            </div>
+        </div>
+    </div>
+    <div class="container trailer-top">
+        <div class="col-md-12 chude">
+                        <div class="snip1338">
+                            <h1><i class="fas fa-star"></i>Show Time</h1>
+                        </div>
+                    </div>
+                    <div class="clear"></div>
+        <div class="row">
+           <div class="col-md-6">
+                    <% Showtime.forEach( (showtime) => {%>
+                        <div class="showtime">
+                            <div class="site sitecgv">
+                                <% Cinema.forEach( (cine) => { 
+                                    if(showtime.CinemaId == cine.id) { %>
+                                <div class="cinema">
+                                    <h4>Rap <%- cine.Name %></h4>
+                                </div>
+                                <% } } ) ; %>
+                                <ul class="product-grid">
+                                    <li class="item">
+                                        <a href="/sticket/<%- Film.id %>/<%- showtime.id %>">
+                                            <%- showtime.timeStart %>
+                                            <br/>
+                                            <span>24 Ghe trong</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <hr style="border : 1.5px solid #000">
+                    <% })%>
+           </div>
+           <div class="col-md-6">
+               <div class="chair">
+                    <h1>So ghe</h1>
+               </div>
+           </div>
+        </div>
+    </div>
+    <!--End TINTIC-->
+    <div class="clear"></div>
+    <%- include('../../partials/default/footer.ejs')%>

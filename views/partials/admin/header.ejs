@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>Admin site - Nhóm 18</title>
+  <!-- Custom fonts for this template-->
+  <link href="/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+
+  <!-- Custom styles for this template-->
+  <link href="/css/sb-admin-2.min.css" rel="stylesheet">
+
+</head>
+
+<body id="page-top">
+
+  <!-- Page Wrapper -->
+  <div id="wrapper">
+
+    <!-- Sidebar -->
+    <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
+
+      <!-- Sidebar - Brand -->
+      <a class="sidebar-brand d-flex align-items-center justify-content-center" href="/admin">
+        <div class="sidebar-brand-icon rotate-n-15">
+          <i class="fas fa-laugh-wink"></i>
+        </div>
+        <div class="sidebar-brand-text mx-3">Quay về <sup>trang chính</sup></div>
+      </a>
+
+      <!-- Divider -->
+      <hr class="sidebar-divider my-0">
+
+      <!-- Nav Item - Dashboard -->
+      <li class="nav-item active">
+        <a class="nav-link" href="/admin">
+          <i class="fas fa-fw fa-tachometer-alt"></i>
+          <span>Trang chính</span></a>
+      </li>
+
+      <!-- Divider -->
+      <hr class="sidebar-divider">
+
+      <!-- Heading -->
+      <div class="sidebar-heading">
+        Interface
+      </div>
+
+      <!-- Nav Item - Pages Collapse Menu -->
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
+          <i class="fas fa-fw fa-cog"></i>
+          <span>Phim</span>
+        </a>
+        <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+          <div class="bg-white py-2 collapse-inner rounded">
+            <h6 class="collapse-header">Quản lý phim</h6>
+            <a class="collapse-item" href="/admin/film">Tất cả phim</a>
+            <a class="collapse-item" href="/admin/film/create">Tạo phim</a>
+          </div>
+        </div>
+      </li>
+  
+      <!-- Nav Item - Utilities Collapse Menu -->
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseCineplex" aria-expanded="true" aria-controls="collapseCineplex">
+        <i class="fas fa-align-justify"></i>
+          <span>Cụm rạp</span>
+        </a>
+        <div id="collapseCineplex" class="collapse" aria-labelledby="headingCineplex" data-parent="#accordionSidebar">
+          <div class="bg-white py-2 collapse-inner rounded">
+            <h6 class="collapse-header">Quản lý cụp rạp</h6>
+            <a class="collapse-item" href="/admin/cineplex">Các cụm rạm</a>
+            <a class="collapse-item" href="/admin/cineplex/create">Thêm cụm rạp</a>
+          </div>
+        </div>
+      </li>
+
+       
+          
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseCinema" aria-expanded="true" aria-controls="collapseCinema">
+          <i class="fas fa-th"></i><span>Rạp phim</span>
+        </a>
+        <div id="collapseCinema" class="collapse" aria-labelledby="headingCinema" data-parent="#accordionSidebar">
+          <div class="bg-white py-2 collapse-inner rounded">
+            <h6 class="collapse-header">Quản lý rạp phim</h6>
+            <a class="collapse-item" href="/admin/cinema">Các rạp phim</a>
+            <a class="collapse-item" href="/admin/cinema/create">Thêm rạp phim</a>
+          </div>
+        </div>
+      </li>
+
+         
+
+          
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseShow" aria-expanded="true" aria-controls="collapseShow"> <i class="fas fa-arrow-alt-circle-right"></i>
+          <span>Xuất chiếu</span>
+        </a>
+        <div id="collapseShow" class="collapse" aria-labelledby="headingShow" data-parent="#accordionSidebar">
+          <div class="bg-white py-2 collapse-inner rounded">
+            <h6 class="collapse-header">Quản lý xuất chiếu</h6>
+            <a class="collapse-item" href="/admin/showtime">Các xuất chiếu</a>
+            <a class="collapse-item" href="/admin/showtime/create">Thêm xuất chiếu</a>
+          </div>
+        </div>
+      </li>      <!-- Divider -->
+      <hr class="sidebar-divider">
+
+      <!-- Heading -->
+      <div class="sidebar-heading">
+        Các thao tác khác
+      </div>
+
+      <!-- Nav Item - Pages Collapse Menu -->
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages" aria-expanded="true" aria-controls="collapsePages">
+          <i class="fas fa-fw fa-folder"></i>
+          <span>Tài khoản</span>
+        </a>
+        <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
+          <div class="bg-white py-2 collapse-inner rounded">
+            <a class="collapse-item" href="/admin/register">Đăng ký tài khoản admin</a>
+            <a class="collapse-item" href="/admin/users">Danh sách người dùng</a>
+            <div class="collapse-divider"></div>
+          </div>
+        </div>
+      </li>
+
+      <!-- Nav Item - Charts -->
+      <!-- Divider -->
+      <hr class="sidebar-divider d-none d-md-block">
+
+      <!-- Sidebar Toggler (Sidebar) -->
+      <div class="text-center d-none d-md-inline">
+        <button class="rounded-circle border-0" id="sidebarToggle"></button>
+      </div>
+
+    </ul>
+    <!-- End of Sidebar -->

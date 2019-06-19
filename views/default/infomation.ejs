@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title><%- user.displayName %></title>
+
+  <!-- Bootstrap core CSS -->
+  <link href="/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Custom fonts for this template -->
+  <link href="https://fonts.googleapis.com/css?family=Saira+Extra+Condensed:500,700" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Muli:400,400i,800,800i" rel="stylesheet">
+  <link href="/vendor/fontawesome-free/css/all.min.css" rel="stylesheet">
+
+  <!-- Custom styles for this template -->
+  <link href="/css/resume.min.css" rel="stylesheet">
+
+</head>
+
+<body id="page-top">
+
+  <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top" id="sideNav">
+    <a class="navbar-brand js-scroll-trigger" href="#page-top">
+      <span class="d-block d-lg-none">Clarence Taylor</span>
+    </a>
+	<!--Cho nay cho 1 image co dinh-->
+	<img style="
+		vertical-align: middle;
+		width: 150px;
+		height: 150px;
+		border-radius: 50%;" 
+		src="img_avatar.png" 
+		alt="Avatar" 
+		class="avatar"
+	>
+	<a class="navbar-brand js-scroll-trigger" href="#page-top">
+      <span class="d-block d-lg-none">Clarence Taylor</span>
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link js-scroll-trigger" href="#about">Thông Tin</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link js-scroll-trigger" href="#newPassword">Đổi mật khẩu</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link js-scroll-trigger" href="#newPhoneNumber">Cập nhật số điện thoại</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/">Về trang chủ</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="container-fluid p-0">
+
+    <section class="resume-section p-3 p-lg-5 d-flex align-items-center" id="about">
+      <div class="w-100">
+        <h1 class="mb-0">
+          <span class="text-primary"><%- user.displayName %></span>
+        </h1>
+        <div class="subheading mb-5">Phone : 0<%- user.phoneNumber %>
+          <a style="margin-left : 20px" href="mailto:name@email.com">Email : <%- user.email %></a>
+        </div>        
+        <div class="social-icons">
+          <a href="#">
+            <i class="fab fa-twitter"></i>
+          </a>
+          <a href="#">
+            <i class="fab fa-facebook-f"></i>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <hr class="m-0">
+
+    <section class="resume-section p-3 p-lg-5 d-flex align-items-center" id="newPassword">
+      <div class="w-100">
+        <h1 class="mb-0">
+          <span class="text-primary">Đổi mật khẩu</span>
+        </h1>
+        <div class="subheading mb-5">Phone : 0<%- user.phoneNumber %>
+          <a style="margin-left : 20px" href="mailto:name@email.com">Email : <%- user.email %></a>
+        </div>
+        <div style="padding: 20px">
+        </div>
+        <form method="post" action="/infomation/newPassword" >
+            <div class="form-group">
+                <label for="passwordOld">Mật khẩu cũ</label>
+                <input class="form-control" type="password" name="passwordOld" id="passwordOld" placeholder="Old Password"/>
+            </div>
+            <div class="form-group">
+                <label for="passwordNew">Mật khẩu mới</label>
+                <input class="form-control" type="password" name="passwordNew" id="passwordNew" placeholder="New Password"/>
+            </div>
+            <div class="form-group">
+                <label for="passwordConfig">Xác nhận mật khẩu</label>
+                <input class="form-control" type="password" name="passwordConfig" id="passwordConfig" placeholder="Config Password"/>
+            </div>
+            <button class="btn btn-success" type="submit">Save</button>
+        </form>
+        <br>
+        <div class="social-icons">
+          <a href="#">
+            <i class="fab fa-twitter"></i>
+          </a>
+          <a href="#">
+            <i class="fab fa-facebook-f"></i>
+          </a>
+        </div>
+      </div>
+    </section>
+  </div>
+
+
+    <section class="resume-section p-3 p-lg-5 d-flex align-items-center" id="newPhoneNumber">
+      <div class="w-100">
+        <h1 class="mb-0">
+          <span class="text-primary">Cập nhật số điện thoại</span>
+        </h1>
+        <div class="subheading mb-5">Phone : 0<%- user.phoneNumber %>
+          <a style="margin-left : 20px" href="mailto:name@email.com">Email : <%- user.email %></a>
+        </div>
+        <div style="padding: 20px">
+        </div>
+        <form method="post" action="/infomation/newPhoneNumber" >
+            <div class="form-group">
+                <label for="newPhoneNumber">Số điện thoại mới</label>
+                <input class="input100" type="number" name="newPhoneNumber" placeholder="Phone" id="newPhoneNumber" required>
+                <span class="focus-input100"></span>
+                <span class="symbol-input100">
+              <i class="fa fa-phone" aria-hidden="true"></i>
+            </span>
+            </div>
+            <button class="btn btn-success" type="submit">Save</button>
+        </form>
+        <br>
+        <div class="social-icons">
+          <a href="#">
+            <i class="fab fa-twitter"></i>
+          </a>
+          <a href="#">
+            <i class="fab fa-facebook-f"></i>
+          </a>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- Bootstrap core JavaScript -->
+  <script src="/vendor/jquery/jquery.min.js"></script>
+  <script src="/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Plugin JavaScript -->
+  <script src="/vendor/jquery-easing/jquery.easing.min.js"></script>
+
+  <!-- Custom scripts for this template -->
+  <script src="/js/resume.min.js"></script>
+    
+
+</body>
+<script>
+$(document).ready(function() {
+      setTimeout(function() {
+        $('.auto-hide').slideUp(300);
+      },2000);
+    });
+</script>
+</html>

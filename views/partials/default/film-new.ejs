@@ -1,0 +1,41 @@
+<div class="container">
+            <div class="row">
+                <div class="col-md-12 chude">
+                    <div class="snip1338">
+                        <h1><i class="fas fa-star"></i>Phim moi</h1>
+                    </div>
+                </div>
+                <% NewFilms.forEach( (film) => { %>
+                    <div class="col-sm-4 col-md-2 move-gird">
+                        <a href="single/<%- film.id %>"><img src="<%- film.posterURL %>" alt="file image" width="200" height="120"></a>
+                        <div class="film-caption">
+                            <a href="single/<%- film.id %>" class="title"><%- film.Name %></a>
+                            <p class="min">Thời lượng : <%- film.time %> Phút</p>
+                        </div>
+                        <div class="new">
+                            NEW
+                        </div>
+                    </div>
+                <% }) %>
+                
+            </div>
+            <div class="row text-center">
+                <div class="col-md-12 chude">
+                    <div class="snip1338">
+                        <h1><i class="fas fa-star"></i>Top View</h1>
+                    </div>
+                </div>
+                <% HotFilms.forEach( (film) => { %>
+                    <div class="col-sm-4 col-md-2 move-gird">
+                        <a href="single/<%- film.id %>"><img src="<%- film.posterURL.replace(/\\/gi,'/').replace('public','') %>" alt="file image" width="200" height="120"></a>
+                        <div class="film-caption">
+                            <a href="single/<%- film.id %>" class="title"><%- film.Name %></a>
+                            <p class="min">Thời lượng : <%- film.time %> Phút</p>
+                        </div>
+                        <div class="hot">
+                            HOT
+                        </div>
+                    </div>
+                <% }) %>
+            </div>
+        </div>
