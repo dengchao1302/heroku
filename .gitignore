@@ -88,5 +88,3 @@ typings/
 .dynamodb/
 
 public/image/
-
-public/uploads/
