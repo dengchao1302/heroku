@@ -2,7 +2,6 @@ const express = require('express');
 const Router = require('express-promise-router');
 const path = require('path');
 const fs = require('fs');
-const dialog = require('dialog');
 const film = require('../models/film');
 const User = require('../models/user.js');
 const sequelize = require('sequelize');
@@ -57,18 +56,17 @@ router.post('/infomation/newPassword', async (req,res) => {
   console.log(req.body);
   const { passwordOld, passwordNew, passwordConfig} = req.body;
   if (passwordNew != passwordConfig) {
-    dialog.warn('Xác nhận mật khẩu sai !',ok => { console.log('Wrong password confirmation')});
+    throw Error('Wrong password confirmation');
   }
   else{
     const user = await User.findOne({where: {id : req.currentUser.id}});
     if(!user.correctPassword(passwordOld)){
-      dialog.warn('Mật khẩu sai !',ok => { console.log('Wrong password')});
+       throw Error('Wrong password');
     }
     else{
       user.update({
         password: passwordNew
       });
-      dialog.warn('Cập nhật mật khẩu thành công !',ok => { console.log('Password change success')});
     }
   }
   res.redirect('/infomation');
@@ -98,7 +96,7 @@ router.post('/register', async function(req, res) {
   const {fullname, email, phone, password,passwordConfig } = req.body;
   if(password != passwordConfig)
   {
-    dialog.warn('Xác nhận mật khẩu sai !',ok => { console.log('Wrong password confirmation')});
+    throw Error('Wrong password confirmation');
     res.redirect('/register');
   }
   else{
@@ -106,7 +104,7 @@ router.post('/register', async function(req, res) {
       where: { email },
     });
     if (user) {
-      dialog.warn('Email đã tồn tại !',ok => { console.log('Existed email')});
+      d throw Error('Existed email');
       res.redirect('/register');
     }
     else{
@@ -128,7 +126,7 @@ router.post('/infomation/newPhoneNumber', async function(req, res) {
     user.update({
       phoneNumber: newPhoneNumberg
     });
-    dialog.warn('Cập nhật số điện thoại thành công !',ok => { console.log('Phone number change success')});
+     throw Error('Phone number change success');
   res.redirect('/infomation');
 });
 

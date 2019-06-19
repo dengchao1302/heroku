@@ -10,7 +10,6 @@ const cinemas = require('../models/cinema');
 const films = require('../models/film');
 const showtime = require('../models/showtime');
 const upload = multer({ dest: 'public/uploads/' });
-const dialog = require('dialog');
 const User = require('../models/user.js');
 Promise.promisifyAll(fs);
 
@@ -107,8 +106,6 @@ router.post('/cineplex/delete/:id',async (req,res) => {
 router.get('/cinema', async (req,res) => {
 	const Cinema = await cinemas.findAll();
 	const cineplex = await cineplexes.findAll();
-	console.log(Cinema);
-	console.log(cineplex);
 	res.render('admin/cinema/index',{Cinema, cineplex});
 });
 
@@ -210,7 +207,7 @@ router.post('/register', async (req,res) => {
       where: { email },
     });
     if (user) {
-      dialog.warn('Email đã tồn tại !',ok => { console.log('Existed email')});
+      throw Error('Email existed');
       res.redirect('/register');
     }
     else{
@@ -221,7 +218,6 @@ router.post('/register', async (req,res) => {
         phoneNumber: phone,
         Role: true
       })
-      dialog.warn('Đăng ký thành công !',ok => { console.log('Admin register success')});
       res.redirect('/admin/register');
     }  
 });
