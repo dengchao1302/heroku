@@ -61,6 +61,17 @@ router.post('/film/create',upload.single('uploadFile'), async (req,res) => {
 	res.redirect('create');
 });
 
+router.post('/film/delete/:id',async (req,res) => {
+  if (films.findByPk(req.params.id)) {
+    films.destroy({
+      where: {
+        id : req.params.id
+      }
+    });
+  }
+  res.redirect('/cineplex');
+});
+
 
 
 // Cụm rạp
