@@ -40,7 +40,6 @@ build/Release
 # Dependency directories
 node_modules/
 jspm_packages/
-public/
 
 # TypeScript v1 declaration files
 typings/
@@ -87,5 +86,3 @@ typings/
 
 # DynamoDB Local files
 .dynamodb/
-
-public/image/
